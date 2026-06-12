@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DG Diligenciart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">
+        <img src="logo-dg-diligenciart.png" alt="DG Diligenciart" class="logo__img">
+      </div>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
+          <li class="nav__item"><a href="#nosotros" class="nav__link">Nosotros</a></li>
+          <li class="nav__item"><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h1 class="hero__title">DG Diligenciart</h1>
+        <p class="hero__subtitle">Soluciones profesionales con compromiso y excelencia.</p>
+      </div>
+    </section>
+
+    <section class="section" id="nosotros">
+      <div class="container">
+        <h2 class="section__title">Sobre Nosotros</h2>
+        <p class="section__text">Somos un equipo dedicado a la gestión y agilización de trámites a nivel nacional, especializados en registros de propiedad y automotor, informes comerciales y multas. Con años de experiencia, ofrecemos eficiencia y confianza.</p>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <h2 class="section__title">Nuestros Servicios</h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3 class="service-card__title">Gestión de Trámites a Nivel Nacional</h3>
+            <p class="service-card__desc">Agilizamos todo tipo de gestiones administrativas y legales en cualquier punto del país.</p>
+          </article>
+          <article class="service-card">
+            <h3 class="service-card__title">Registro de la Propiedad Inmueble y Automotor</h3>
+            <p class="service-card__desc">Realizamos inscripciones, consultas y certificaciones en registros públicos.</p>
+          </article>
+          <article class="service-card">
+            <h3 class="service-card__title">Informes Comerciales</h3>
+            <p class="service-card__desc">Emitimos informes detallados sobre empresas, personas y bienes para la toma de decisiones.</p>
+          </article>
+          <article class="service-card">
+            <h3 class="service-card__title">Gestión de Multas de Tránsito</h3>
+            <p class="service-card__desc">Gestionamos el pago, descargo y toda la documentación relacionada con infracciones viales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="contacto">
+      <div class="container">
+        <h2 class="section__title">Contacto</h2>
+        <ul class="contact-list">
+          <li class="contact-list__item">
+            <span class="contact-list__label">Email</span>
+            <a href="mailto:Fkussi@hotmail.com" class="contact-list__value">Fkussi@hotmail.com</a>
+          </li>
+          <li class="contact-list__item">
+            <span class="contact-list__label">Teléfono</span>
+            <a href="tel:+5491154135007" class="contact-list__value">11 5413 5007</a>
+          </li>
+          <li class="contact-list__item">
+            <span class="contact-list__label">Dirección</span>
+            <span class="contact-list__value">Uruguay 485 - 1B</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__text">&copy; 2026 DG Diligenciart. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('nav--open');
+    });
+  </script>
+</body>
+</html>
