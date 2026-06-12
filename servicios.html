@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DG Diligenciart — Inicio</title>
+  <title>DG Diligenciart — Servicios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
       </a>
       <nav class="nav" id="nav">
         <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Inicio</a></li>
+          <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
           <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
-          <li class="nav__item"><a href="servicios.html" class="nav__link">Servicios</a></li>
+          <li class="nav__item"><a href="servicios.html" class="nav__link nav__link--active">Servicios</a></li>
           <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
         </ul>
       </nav>
@@ -33,10 +33,32 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="page-hero">
       <div class="container">
-        <h1 class="hero__title">DG Diligenciart</h1>
-        <p class="hero__subtitle">Soluciones profesionales con compromiso y excelencia.</p>
+        <h1 class="page-hero__title">Nuestros Servicios</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="services-grid">
+          <article class="service-card">
+            <h2 class="service-card__title">Gestión de Trámites a Nivel Nacional</h2>
+            <p class="service-card__desc">Agilizamos todo tipo de gestiones administrativas y legales en cualquier punto del país.</p>
+          </article>
+          <article class="service-card">
+            <h2 class="service-card__title">Registro de la Propiedad Inmueble y Automotor</h2>
+            <p class="service-card__desc">Realizamos inscripciones, consultas y certificaciones en registros públicos.</p>
+          </article>
+          <article class="service-card">
+            <h2 class="service-card__title">Informes Comerciales</h2>
+            <p class="service-card__desc">Emitimos informes detallados sobre empresas, personas y bienes para la toma de decisiones.</p>
+          </article>
+          <article class="service-card">
+            <h2 class="service-card__title">Gestión de Multas de Tránsito</h2>
+            <p class="service-card__desc">Gestionamos el pago, descargo y toda la documentación relacionada con infracciones viales.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>

@@ -15,6 +15,8 @@ body {
   background-color: #ffffff;
   color: #000000;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -54,9 +56,16 @@ ul {
   height: 4rem;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .logo__img {
-  height: 2.5rem;
+  height: 50px;
   width: auto;
+  max-width: 200px;
 }
 
 /* ---- Navigation ---- */
@@ -64,13 +73,14 @@ ul {
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav__link {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   position: relative;
   transition: opacity 0.2s;
 }
@@ -81,7 +91,7 @@ ul {
   left: 0;
   bottom: -4px;
   width: 100%;
-  height: 2px;
+  height: 1.5px;
   background-color: #000000;
   transform: scaleX(0);
   transform-origin: right;
@@ -89,10 +99,15 @@ ul {
 }
 
 .nav__link:hover {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .nav__link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav__link--active::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -102,7 +117,7 @@ ul {
 .nav-toggle {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
@@ -112,86 +127,63 @@ ul {
 .nav-toggle__bar {
   display: block;
   width: 24px;
-  height: 2px;
+  height: 1.5px;
   background-color: #000000;
   transition: transform 0.25s;
 }
 
-/* ---- Hero ---- */
+/* ---- Hero (Home) ---- */
 
 .hero {
-  padding: 6rem 0 4rem;
+  padding: 10rem 0 8rem;
   text-align: center;
 }
 
 .hero__title {
-  font-size: 2.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
 }
 
 .hero__subtitle {
   font-size: 1.125rem;
   font-weight: 300;
-  color: #555555;
-  max-width: 36rem;
+  color: #666666;
+  max-width: 32rem;
   margin: 0 auto;
+}
+
+/* ---- Page Hero (inner pages) ---- */
+
+.page-hero {
+  padding: 5rem 0 2.5rem;
+  text-align: center;
+}
+
+.page-hero__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 /* ---- Sections ---- */
 
 .section {
-  padding: 4rem 0;
+  padding: 3rem 0 6rem;
 }
 
-.section--alt {
-  background-color: #f7f7f7;
-}
-
-.section__title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 1rem;
-}
-
-.section__text {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #333333;
+.content-block {
   max-width: 48rem;
 }
 
-/* ---- Link ---- */
-
-.link {
-  font-weight: 500;
-  border-bottom: 1px solid #000000;
-  transition: opacity 0.2s;
-}
-
-.link:hover {
-  opacity: 0.6;
-}
-
-/* ---- Footer ---- */
-
-.footer {
-  border-top: 1px solid #e5e5e5;
-  padding: 1.5rem 0;
-}
-
-.footer__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer__text {
-  font-size: 0.8125rem;
-  color: #888888;
+.content-block__text {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.8;
 }
 
 /* ---- Services Grid ---- */
@@ -204,27 +196,27 @@ ul {
 
 .service-card {
   border: 1px solid #000000;
-  padding: 1.75rem;
+  padding: 2rem;
   background-color: #ffffff;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .service-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
 }
 
 .service-card__title {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .service-card__desc {
   font-size: 0.9375rem;
   color: #555555;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ---- Contact List ---- */
@@ -232,7 +224,7 @@ ul {
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
   max-width: 32rem;
 }
 
@@ -240,24 +232,90 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.contact-list__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .contact-list__label {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #888888;
+  letter-spacing: 0.1em;
+  color: #999999;
 }
 
 .contact-list__value {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 400;
   color: #000000;
+  transition: opacity 0.2s;
 }
 
 .contact-list__value:hover {
-  opacity: 0.6;
+  opacity: 0.5;
+}
+
+/* ---- WhatsApp Floating Button ---- */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-family: "Poppins", system-ui, -apple-system, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-btn__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.whatsapp-btn__text {
+  white-space: nowrap;
+}
+
+/* ---- Footer ---- */
+
+.footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 2rem 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__text {
+  font-size: 0.8125rem;
+  color: #999999;
 }
 
 /* ---- Responsive ---- */
@@ -285,7 +343,7 @@ ul {
   }
 
   .nav__link {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   .nav-toggle {
@@ -293,19 +351,47 @@ ul {
     z-index: 100;
   }
 
+  .hero {
+    padding: 6rem 0 5rem;
+  }
+
   .hero__title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .hero__subtitle {
     font-size: 1rem;
   }
 
-  .section__title {
-    font-size: 1.5rem;
+  .page-hero {
+    padding: 3.5rem 0 1.5rem;
+  }
+
+  .page-hero__title {
+    font-size: 1.75rem;
+  }
+
+  .section {
+    padding: 2rem 0 4rem;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .whatsapp-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .whatsapp-btn__text {
+    display: none;
+  }
+
+  .whatsapp-btn__icon {
+    width: 22px;
+    height: 22px;
   }
 }
